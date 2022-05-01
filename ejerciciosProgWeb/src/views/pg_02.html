@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="row border">
+          <div class="col-3 border">
+            Column
+          </div>
+          <div class="col-9 border">
+            Column
+          </div>
+        </div>
+
+        <form class="mt-5" id="frm_login">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <input type="email" class="form-control" name="email" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" class="form-control" name="password">
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+    </div>
+    <script>
+
+        var form_login = document.getElementById("frm_login");
+        var datos_form = {email: "", password: ""};
+        var array_json = [
+                {
+                    "nombre" : "ariosto",
+                    "apellido" : "vicuna",
+                    "direccion": "San camilo"
+                },
+
+                {
+                    "nombre" : "ana",
+                    "apellido" : "morales",
+                    "direccion": "Via valencia"
+                },
+
+                {
+                    "nombre" : "mario",
+                    "apellido" : "solorzano",
+                    "direccion": "La judith"
+                }
+            ]
+        console.log(array_json);
+
+        form_login.addEventListener("submit", function (event) {
+            event.preventDefault(); // no recargar la pagina
+            let email = form_login.elements["email"];
+            let password = form_login.elements["password"];
+            datos_form.email = email.value;
+            datos_form.password = password.value;
+            console.log(datos_form);
+            console.log(email.value, password.value);
+        });
+
+        // estructura JSON
+
+
+    </script>
+</body>
+</html>
